@@ -1,0 +1,165 @@
+html, body {
+  background: black;
+  height: 100%;
+}
+
+container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+  animation: fadein 4s 1 ease;
+}
+
+lootbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  background-image: linear-gradient(45deg, #f200ff 0%, #00c8ff 52%, #00ff6e 90%);
+  font-size: 6em;
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+  transition: .1s;
+}
+
+lootbox::before {
+  content: "";
+  width: 230px;
+  height: 230px;
+  z-index: -1;
+  position: absolute;
+  animation: rotate 13s infinite forwards linear, startblur 5s 1 forwards linear;
+  background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+  border-radius: 20%;
+  filter: blur(40px);
+  transition: .3s;
+}
+
+lootbox:hover:before {
+  width: 290px;
+  height: 290px;
+  filter: blur(60px);
+  transition: .3s;
+}
+
+lootbox::after {
+  content: "";
+  width: 250px;
+  height: 250px;
+  z-index: -1;
+  position: absolute;
+  background-image: linear-gradient(45deg, #b200bb 0%, #008db4 52%, #00bb51 90%);
+  border-radius: 2px;
+  transform: rotate(7deg);
+  transition: 3s;
+}
+
+@keyframes rotate {
+  0% {transform: rotate(0deg)}
+  50% {transform: rotate(180deg)}
+  100% {transform: rotate(360deg)}
+}
+
+@keyframes startblur {
+  0% {filter: blur(0px); opacity: 0;}
+  100% {filter: blur(40px); opacity: 1;}
+}
+
+@keyframes shake {
+  0% {transform: translateX(0px)}
+  33% {transform: translateX(-10px)}
+  66% {transform: translateX(10px)}
+  100% {transform: translateX(0px)}
+}
+
+.fadein {
+  animation: fadein 4s 1 ease;
+}
+
+@keyframes fadein {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+.flash {
+  animation: flash 1s 1 linear;
+}
+
+@keyframes flash {
+  0% {background: #737373}
+  100% {background: black}
+}
+
+
+#cat-icon {
+  height: 100%;
+  width: 100%;
+  background: url(assets/img/cat.png);
+  background-position: center;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cat-icon:hover {
+  transform: scale(1.1);
+  animation: shake .2s 1 forwards linear;
+}
+
+@keyframes loading {
+  100% {background: #aaa;}
+  75% {background: #333;}
+  0% {background: #aaa;}
+}
+
+.popcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  box-shadow: none;
+}
+
+#playing-card {
+  width: 36em;
+  height: 36em;
+  animation: loading 4s infinite forwards linear;
+  max-width: 90%;
+  border-radius: 2px;
+  box-shadow: #fff3 0px 0px 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  #playing-card {
+    width: 25em;
+    height: 25em;
+  }
+}
+
+#receiver {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+#pogtext {
+  padding-top: 25px;
+  text-align: center;
+  color: white;
+}
+
+.badge {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
