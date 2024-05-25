@@ -1,7 +1,7 @@
 # Catsploshion
 
-![Alt text](https://projects.dontdalon.com/assets/img/cats-screen.png)<br>
-![Alt text](https://projects.dontdalon.com/assets/img/cats-screen-2.png)<br>
+![Alt text]([https://projects.dontdalon.com/assets/img/cats-screen.png](https://stormtersteeg.github.io/assets/apps/cats-screen.png))<br>
+![Alt text]([https://projects.dontdalon.com/assets/img/cats-screen-2.png](https://stormtersteeg.github.io/assets/apps/cats-screen-2.png))<br>
 
 A cat-image lootbox web-app.
 Written using [Sprint](https://github.com/StormTersteeg/PHP-Sprint-Framework).
